@@ -56,7 +56,7 @@ namespace TicTacToe
         /// 
         private void FormTTT_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (game.State == Game.GameState.InProgress)
+            if (!(this.game is null) && this.game.State == Game.GameState.InProgress)
             {
                 DialogResult result = MessageBox.Show("WARNING: There is game in progress. Are you sure to quit?",
                     "Game in Progress", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

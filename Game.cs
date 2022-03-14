@@ -162,7 +162,7 @@ namespace TicTacToe
         public void Play(Position position)
         {
             this.board.PutPiece(position, playerList.PlayerInTurn.Piece);
-            if (CheckWinner(playerList.PlayerInTurn.Piece))
+            if (CheckWinner())
             {
                 this.winner = playerList.PlayerInTurn;
                 this.state = GameState.Won;
@@ -188,7 +188,7 @@ namespace TicTacToe
         /// </summary>
         /// <param name="piece">Type of piece to check.</param>
         /// <returns>True if the player has won the game; false otherwise.</returns>
-        private bool CheckWinner(Piece piece)
+        private bool CheckWinner()
         {
             bool winner = false;
             Position p11 = new Position(1, 1); Position p12 = new Position(1, 2); Position p13 = new Position(1, 3);
